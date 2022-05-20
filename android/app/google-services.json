@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1067082398499",
+    "project_id": "notera-flutter-project",
+    "storage_bucket": "notera-flutter-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1067082398499:android:0aca815fbeba19709c6a96",
+        "android_client_info": {
+          "package_name": "u42web.jcaproject2techshop.notera"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1067082398499-qkkncc43gqa45m32hcm8sn9nmmqlidf1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCaQfigViCcVTkhQljCRotJJMDf02aCTkY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1067082398499-qkkncc43gqa45m32hcm8sn9nmmqlidf1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
