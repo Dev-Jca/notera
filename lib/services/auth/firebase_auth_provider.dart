@@ -1,3 +1,5 @@
+import 'package:firebase_core/firebase_core.dart';
+import 'package:notera/firebase_options.dart';
 import 'package:notera/services/auth/auth_user.dart';
 import 'package:notera/services/auth/auth_providers.dart';
 import 'package:notera/services/auth/auth_exceptions.dart';
@@ -22,7 +24,7 @@ class FirebaseAuthProvider implements AuthProvider {
       }
     } on FirebaseAuthException catch (e) {
       if (e.code == 'email-already-in-use') {
-        throw EmailAlreadyInAuthException();
+        throw EmailAlreadyInUseAuthException();
       } else if (e.code == 'weak-password') {
         throw WeakPasswordAuthException();
       } else if (e.code == 'invalid-email') {
@@ -51,7 +53,7 @@ class FirebaseAuthProvider implements AuthProvider {
     required String password,
   }) async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      FirebaseAuth.instance.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
@@ -69,7 +71,7 @@ class FirebaseAuthProvider implements AuthProvider {
       } else {
         throw GenericAuthException();
       }
-    } catch (_) {
+    } catch (e) {
       throw GenericAuthException();
     }
   }
@@ -92,5 +94,11 @@ class FirebaseAuthProvider implements AuthProvider {
     } else {
       throw UserNotLoggedInAuthException();
     }
+  }
+
+  @override
+  Future<void> initialize() async {
+    await Firebase.initializeApp(
+        options: DefaultFirebaseOptions.currentPlatform);
   }
 }
