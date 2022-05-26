@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:notera/constants/routes.dart';
 import 'package:notera/services/auth/auth_exceptions.dart';
